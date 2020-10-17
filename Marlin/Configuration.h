@@ -493,18 +493,18 @@
   //#define PID_PARAMS_PER_HOTEND // Uses separate PID parameters for each extruder (useful for mismatched extruders)
                                   // Set/get with gcode: M301 E[extruder number, 0-2]
 
-  // ANET A8 Standard Extruder at 210 Degree Celsius and 100% Fan
-  // (measured after M106 S255 with M303 E0 S210 C8)
+  // ANET A8 Standard Extruder at 240 Degree Celsius and 25% Fan
+  // (measured after M106 S64 with M303 E0 S240)
   #if ENABLED(PID_PARAMS_PER_HOTEND)
     // Specify between 1 and HOTENDS values per array.
     // If fewer than EXTRUDER values are provided, the last element will be repeated.
-    #define DEFAULT_Kp_LIST {  21.00,  20.00 }
-    #define DEFAULT_Ki_LIST {   1.25,   1.25 }
-    #define DEFAULT_Kd_LIST {  86.00,  86.00 }
+    #define DEFAULT_Kp_LIST {  26.85,  26.85 }
+    #define DEFAULT_Ki_LIST {   1.92,   1.92 }
+    #define DEFAULT_Kd_LIST {  94.02,  94.02 }
   #else
-    #define DEFAULT_Kp 36.76
-    #define DEFAULT_Ki 2.86
-    #define DEFAULT_Kd 118.20
+    #define DEFAULT_Kp  26.85
+    #define DEFAULT_Ki   1.92
+    #define DEFAULT_Kd  94.02
   #endif
 #endif // PIDTEMP
 
@@ -542,12 +542,10 @@
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
   // ANET A8
-  // original Bed + 0.3mm Heat conducting into 4mm borosilicate (PID-Autotune: M303 E-1 S60 C5):
-  #define DEFAULT_bedKp 151.06
-  #define DEFAULT_bedKi 21.95
-  #define DEFAULT_bedKd 693.03
-
-  // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
+  // original Bed + 0.3mm Heat conducting into 3mm borosilicate (PID-Autotune: M303 E-1 S80):
+  #define DEFAULT_bedKp 212.03
+  #define DEFAULT_bedKi 41.08
+  #define DEFAULT_bedKd 729.51
 #endif // PIDTEMPBED
 
 #if EITHER(PIDTEMP, PIDTEMPBED)
