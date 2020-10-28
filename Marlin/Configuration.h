@@ -493,18 +493,18 @@
   //#define PID_PARAMS_PER_HOTEND // Uses separate PID parameters for each extruder (useful for mismatched extruders)
                                   // Set/get with gcode: M301 E[extruder number, 0-2]
 
-  // ANET A8 Standard Extruder at 240 Degree Celsius and 25% Fan
+  // ANET A8 Standard Extruder at 240 Degree Celsius and 25% Fan with Mistral fan duct
   // (measured after M106 S64 with M303 E0 S240)
   #if ENABLED(PID_PARAMS_PER_HOTEND)
     // Specify between 1 and HOTENDS values per array.
     // If fewer than EXTRUDER values are provided, the last element will be repeated.
-    #define DEFAULT_Kp_LIST {  26.85,  26.85 }
-    #define DEFAULT_Ki_LIST {   1.92,   1.92 }
-    #define DEFAULT_Kd_LIST {  94.02,  94.02 }
+    #define DEFAULT_Kp_LIST {  23.60,  23.60 }
+    #define DEFAULT_Ki_LIST {   1.48,   1.48 }
+    #define DEFAULT_Kd_LIST {  93.75,  93.75 }
   #else
-    #define DEFAULT_Kp  26.85
-    #define DEFAULT_Ki   1.92
-    #define DEFAULT_Kd  94.02
+    #define DEFAULT_Kp  23.60
+    #define DEFAULT_Ki   1.48
+    #define DEFAULT_Kd  93.75
   #endif
 #endif // PIDTEMP
 
