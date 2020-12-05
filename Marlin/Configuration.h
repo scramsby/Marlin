@@ -862,7 +862,7 @@
  *      - normally-closed switches to GND and D32.
  *      - normally-open switches to 5V and D32.
  */
-#define Z_MIN_PROBE_PIN P0_10
+//#define Z_MIN_PROBE_PIN P0_10
 
 /**
  * Probe Type
