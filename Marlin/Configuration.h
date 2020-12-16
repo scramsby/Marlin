@@ -987,7 +987,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 4, -65, 0 }
+#define NOZZLE_TO_PROBE_OFFSET { 4, -65, -1.68 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1131,8 +1131,8 @@
 #define Y_MIN_POS -82
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
-#define Y_MAX_POS Y_BED_SIZE + 15
-#define Z_MAX_POS 180 // TODO: Increase this after mounting control board better.
+#define Y_MAX_POS Y_BED_SIZE + 10
+#define Z_MAX_POS 150 // TODO: Increase this after mounting control board better.
 
 /**
  * Software Endstops
@@ -1742,7 +1742,7 @@
  *
  * Use CRC checks and retries on the SD communication.
  */
-//#define SD_CHECK_AND_RETRY
+#define SD_CHECK_AND_RETRY
 
 /**
  * LCD Menu Items
