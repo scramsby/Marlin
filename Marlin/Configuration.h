@@ -494,17 +494,17 @@
                                   // Set/get with gcode: M301 E[extruder number, 0-2]
 
   // ANET A8 Standard Extruder at 240 Degree Celsius and 25% Fan with Mistral fan duct
-  // (measured after M106 S64 with M303 E0 S240)
+  // (measured after M106 S64 with M303 E0 S240 U1)
   #if ENABLED(PID_PARAMS_PER_HOTEND)
     // Specify between 1 and HOTENDS values per array.
     // If fewer than EXTRUDER values are provided, the last element will be repeated.
-    #define DEFAULT_Kp_LIST {  18.07,  18.07 }
-    #define DEFAULT_Ki_LIST {   1.32,   1.32 }
-    #define DEFAULT_Kd_LIST {  61.81,  61.81 }
+    #define DEFAULT_Kp_LIST {  20.0808,  20.0808 }
+    #define DEFAULT_Ki_LIST {   1.7391,   1.7391 }
+    #define DEFAULT_Kd_LIST {  57.9658,  57.9658 }
   #else
-    #define DEFAULT_Kp 18.07
-    #define DEFAULT_Ki 1.32
-    #define DEFAULT_Kd 61.81
+    #define DEFAULT_Kp 20.0808
+    #define DEFAULT_Ki 1.7391
+    #define DEFAULT_Kd 57.9658
   #endif
 #endif // PIDTEMP
 
@@ -542,10 +542,10 @@
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
   // ANET A8
-  // original Bed + 0.3mm Heat conducting into 3mm borosilicate (PID-Autotune: M303 E-1 S80):
-  #define DEFAULT_bedKp 212.03
-  #define DEFAULT_bedKi 41.08
-  #define DEFAULT_bedKd 729.51
+  // original Bed + 0.3mm Heat conducting into 3mm borosilicate (PID-Autotune: M303 E-1 S60 U1):
+  #define DEFAULT_bedKp 149.8329
+  #define DEFAULT_bedKi 22.2568
+  #define DEFAULT_bedKd 672.4503
 #endif // PIDTEMPBED
 
 #if EITHER(PIDTEMP, PIDTEMPBED)
@@ -987,7 +987,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 4, -65, -1.68 }
+#define NOZZLE_TO_PROBE_OFFSET { 4, -65, -1.05 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1040,7 +1040,7 @@
 #define Z_PROBE_OFFSET_RANGE_MAX 20
 
 // Enable the M48 repeatability test to test probe accuracy
-//#define Z_MIN_PROBE_REPEATABILITY_TEST
+#define Z_MIN_PROBE_REPEATABILITY_TEST
 
 // Before deploy/stow pause for user confirmation
 //#define PAUSE_BEFORE_DEPLOY_STOW
