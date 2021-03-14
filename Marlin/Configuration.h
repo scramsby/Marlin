@@ -131,7 +131,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Anet Evolution"
+#define CUSTOM_MACHINE_NAME "HEVO"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -493,18 +493,18 @@
   //#define PID_PARAMS_PER_HOTEND // Uses separate PID parameters for each extruder (useful for mismatched extruders)
                                   // Set/get with gcode: M301 E[extruder number, 0-2]
 
-  // ANET A8 Standard Extruder at 240 Degree Celsius and 25% Fan with Mistral fan duct
-  // (measured after M106 S64 with M303 E0 S240 U1)
+  // HEVO LGX FF extruder/hotend at 230 Degree Celsius and 25% Fan with LGX fan duct.
+  // (measured after M106 S64 with M303 E0 S230 U1)
   #if ENABLED(PID_PARAMS_PER_HOTEND)
     // Specify between 1 and HOTENDS values per array.
     // If fewer than EXTRUDER values are provided, the last element will be repeated.
-    #define DEFAULT_Kp_LIST {  26.3511,  26.3511 }
-    #define DEFAULT_Ki_LIST {   2.1229,   2.1229 }
-    #define DEFAULT_Kd_LIST {  81.7708,  81.7708 }
+    #define DEFAULT_Kp_LIST {  28.1416,  28.1416 }
+    #define DEFAULT_Ki_LIST {   4.4342,   4.4342 }
+    #define DEFAULT_Kd_LIST {  44.6501,  44.6501 }
   #else
-    #define DEFAULT_Kp 26.3511
-    #define DEFAULT_Ki 2.1229
-    #define DEFAULT_Kd 81.7708
+    #define DEFAULT_Kp 28.1416
+    #define DEFAULT_Ki 4.4342
+    #define DEFAULT_Kd 44.6501
   #endif
 #endif // PIDTEMP
 
@@ -742,7 +742,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 100 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 411.11 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -987,7 +987,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 4, -65, -2.24 }
+#define NOZZLE_TO_PROBE_OFFSET { 20.75, 0, -3.175 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
